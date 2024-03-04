@@ -172,6 +172,17 @@ switch ($_GET["op"]) {
 				echo '<option value=' . $reg->codigo_persona.'>'.$reg->nombre.' '.$reg->apellidos.'</option>';
 			}
 			break;
+		
+		case 'selectDepartamento':
+			require_once "../modelos/Departamento.php";
+			$dep=new Departamento();
+
+			$rspta=$dep->listar();
+
+			while ($reg=$rspta->fetch_object()) {
+				echo '<option value=' . $reg->iddepartamento.'>'.$reg->nombre.' || '.$reg->descripcion.'</option>';
+			}
+			break;		
 
 case 'selectDistri':
 			require_once "../modelos/Distribuidora.php";
