@@ -173,6 +173,17 @@ switch ($_GET["op"]) {
 			}
 			break;
 
+case 'selectdepa':
+			require_once "../modelos/Departamento.php";
+			$depa=new Departamento();
+
+			$rspta=$depa->listar();
+
+			while ($reg=$rspta->fetch_object()) {
+				echo '<option value=' . $reg->id.'>'.$reg->nombre.'</option>';
+			}
+			break;
+
 case 'selectDistri':
 			require_once "../modelos/Distribuidora.php";
 			$distri=new Distribuidora();
