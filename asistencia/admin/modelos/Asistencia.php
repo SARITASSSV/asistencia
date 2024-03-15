@@ -27,7 +27,20 @@ public function listar_asistencia($fecha_inicio,$fecha_fin,$codigo_persona){
 }
 
 public function listar_asistencia_d($fecha_inicio,$fecha_fin,$codigo_distri){
-	$sql="SELECT a.idasistencia,a.codigo_persona,a.hora,a.tipo,a.fecha,u.nombre,u.apellidos,c.nombre as depto FROM asistencia a INNER JOIN usuarios u ON  a.codigo_persona=u.codigo_persona INNER JOIN departamento c on u.iddepartamento=c.iddepartamento WHERE DATE(a.fecha)>='$fecha_inicio' AND DATE(a.fecha)<='$fecha_fin' AND u.distribuidora='$codigo_distri'";
+	$sql="SELECT a.idasistencia,a.codigo_persona,a.hora,a.tipo,a.fecha,u.nombre,u.apellidos,c.nombre as depto 
+	FROM asistencia a 
+	INNER JOIN usuarios u ON  a.codigo_persona=u.codigo_persona 
+	INNER JOIN departamento c on u.iddepartamento=c.iddepartamento 
+	WHERE DATE(a.fecha)>='$fecha_inicio' AND DATE(a.fecha)<='$fecha_fin' AND u.distribuidora='$codigo_distri'";
+	return ejecutarConsulta($sql);
+}
+
+public function listar_asistencia_departamento($fecha_inicio,$fecha_fin,$iddepartamento){
+	$sql="SELECT a.idasistencia,a.codigo_persona,a.hora,a.tipo,a.fecha,u.nombre,u.apellidos,c.nombre as depto 
+	FROM asistencia a 
+	INNER JOIN usuarios u ON  a.codigo_persona=u.codigo_persona 
+	INNER JOIN departamento c on u.iddepartamento=c.iddepartamento 
+	WHERE DATE(a.fecha)>='$fecha_inicio' AND DATE(a.fecha)<='$fecha_fin' AND u.iddepartamento='$iddepartamento'";
 	return ejecutarConsulta($sql);
 }
 

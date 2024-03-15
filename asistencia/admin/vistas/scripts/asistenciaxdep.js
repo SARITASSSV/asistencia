@@ -10,8 +10,8 @@ $("#formulario").on("submit",function(e){
 
     //cargamos los items al select cliente
    $.post("../ajax/asistencia.php?op=selectdepa", function(r){
-   	$("#spdepartamento").html(r);
-   	$('#spdepartamento').selectpicker('refresh');
+   	$("#iddepartamento").html(r);
+   	$('#iddepartamento').selectpicker('refresh');
    });
 
 
@@ -79,7 +79,7 @@ function listaru(){
 function listar_asistencia(){
 var  fecha_inicio = $("#fecha_inicio").val();
  var fecha_fin = $("#fecha_fin").val();
- var id_distri = $("#iddistri").val();
+ var iddepartamento = $("#iddepartamento").val();
 
 	tabla=$('#tbllistado_asistencia').dataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
@@ -93,8 +93,8 @@ var  fecha_inicio = $("#fecha_inicio").val();
 		],
 		"ajax":
 		{
-			url:'../ajax/asistencia.php?op=listar_asistencia2',
-			data:{fecha_inicio:fecha_inicio, fecha_fin:fecha_fin, id_distri:id_distri},
+			url:'../ajax/asistencia.php?op=listar_asistencia_departamento',
+			data:{fecha_inicio:fecha_inicio, fecha_fin:fecha_fin,  iddepartamento: iddepartamento},
 			type: "get",
 			dataType : "json",
 			error:function(e){

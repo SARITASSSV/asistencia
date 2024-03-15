@@ -38,7 +38,7 @@ require 'header.php';
   </div>
   <div class="form-inline col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <label>Distribuidora</label>
-    <select name="spdepartamento" id="spdepartamento" class="form-control selectpicker" data-live-search="true" required>
+    <select name="iddepartamento" id="iddepartamento" class="form-control selectpicker" data-live-search="true" required>
     </select>
     <br>
     <button class="btn btn-success" onclick="listar_asistencia();">

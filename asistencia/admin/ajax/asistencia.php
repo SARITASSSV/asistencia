@@ -180,7 +180,7 @@ case 'selectdepa':
 			$rspta=$depa->listar();
 
 			while ($reg=$rspta->fetch_object()) {
-				echo '<option value=' . $reg->id.'>'.$reg->nombre.'</option>';
+				echo '<option value=' . $reg->iddepartamento.'>'.$reg->nombre.'</option>';
 			}
 			break;
 
@@ -195,7 +195,34 @@ case 'selectDistri':
 			}
 			break;
 
+case 'listar_asistencia_departamento':
+    $fecha_inicio=$_REQUEST["fecha_inicio"];
+    $fecha_fin=$_REQUEST["fecha_fin"];
+    $iddepartamento=$_REQUEST["iddepartamento"]; 
+	$rspta=$asistencia->listar_asistencia_departamento($fecha_inicio,$fecha_fin,$iddepartamento);
+		//declaramos un array
+	$data=Array();
 
+
+		while ($reg=$rspta->fetch_object()) {
+			$data[]=array(
+				"0"=>$reg->fecha,
+				"1"=>$reg->nombre,
+				"2"=>$reg->depto,
+				"3"=>$reg->tipo,
+				"4"=>$reg->hora,
+				"5"=>$reg->codigo_persona
+				);
+		}
+
+		$results=array(
+             "sEcho"=>1,//info para datatables
+             "iTotalRecords"=>count($data),//enviamos el total de registros al datatable
+             "iTotalDisplayRecords"=>count($data),//enviamos el total de registros a visualizar
+             "aaData"=>$data); 
+		echo json_encode($results);
+
+	break;
 case 'listar_asistencia2':
     $fecha_inicio=$_REQUEST["fecha_inicio"];
     $fecha_fin=$_REQUEST["fecha_fin"];
