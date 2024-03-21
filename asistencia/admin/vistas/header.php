@@ -156,6 +156,7 @@ if (strlen(session_id())<1)
           <ul class="treeview-menu">
             <li><a href="departamento.php"><i class="fa fa-circle-o"></i> Departamento</a></li>            
           </ul>
+<!--
       </li>
 
           <li class="treeview">
@@ -171,6 +172,7 @@ if (strlen(session_id())<1)
            
           </ul>
       </li>
+-->
 <?php } ?>
 <?php if ($_SESSION['tipousuario']!='Administrador') {
 ?>

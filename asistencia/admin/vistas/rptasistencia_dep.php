@@ -20,7 +20,7 @@ require 'header.php';
         <div class="col-md-12">
       <div class="box">
 <div class="box-header with-border">
-  <h1 class="box-title">Consulta de Asistencias por Fecha y distribuidora</h1>
+  <h1 class="box-title">Consulta de Asistencias por Fecha y Supervisora</h1>
   <div class="box-tools pull-right">
     
   </div>
@@ -37,7 +37,7 @@ require 'header.php';
     <input type="date" class="form-control" name="fecha_fin" id="fecha_fin" value="<?php echo date("Y-m-d"); ?>">
   </div>
   <div class="form-inline col-lg-6 col-md-6 col-sm-6 col-xs-12">
-    <label>Distribuidora</label>
+    <label>Supervisora</label>
     <select name="iddepartamento" id="iddepartamento" class="form-control selectpicker" data-live-search="true" required>
     </select>
     <br>
@@ -48,7 +48,7 @@ require 'header.php';
     <thead>
       <th>Fecha</th>
       <th>Nombres</th>
-      <th>Departamento</th>
+      <th>Supervisora</th>
       <th>Asistencia</th>
       <th>Hora</th>
       <th>Código</th>
@@ -58,7 +58,7 @@ require 'header.php';
     <tfoot>
       <th>Fecha</th>
       <th>Nombres</th>
-      <th>Departamento</th>
+      <th>Supervisora</th>
       <th>Asistencia</th>
       <th>Hora</th>
       <th>Código</th>

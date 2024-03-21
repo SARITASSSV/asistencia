@@ -24,6 +24,7 @@ require_once('../modelos/Usuario.php');
       <div class="box">
 <div class="panel-body">
 
+<!--
 <?php if ($_SESSION['tipousuario']=='Administrador') {
 ?>
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -47,6 +48,8 @@ require_once('../modelos/Usuario.php');
   </div>
 </div>
 <?php } ?>
+-->
+
 <?php if ($_SESSION['tipousuario']!='Administrador') {
 ?>
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -147,10 +150,10 @@ require_once('../modelos/Usuario.php');
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
   <div class="small-box bg-yellow">
     
-    <a href="rptasistencia_d.php" class="small-box-footer">
+    <a href="rptasistencia_dep.php" class="small-box-footer">
     <div class="inner">
       <h5 style="font-size: 20px;">
-        <strong>Reporte de horas trabajadas </strong>
+        <strong>Reporte de asistencias por Supervisora</strong>
       </h5>
       <p>Módulo</p>
     </div>
